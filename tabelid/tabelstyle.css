@@ -25,3 +25,44 @@ td{
     border: solid 1pt;
 
 }
+table#Tabel4{
+    border: solid 1pt cyan;
+    width: 20%;
+    height: 200pt;
+    text-align: center;
+}
+#ttd4{
+    background-color: yellow;
+}
+td#t4td1{
+    border: solid 1pt;
+    background-color: hsl(42, 99.10%, 42.40%);
+}
+td#t4td2{
+    border: solid 1pt;
+    background-color: rgb(1, 253, 119);
+}
+td#t4td3{
+    border: solid 1pt;
+    background-color: deepskyblue;
+}
+td#t4td4{
+    border: solid 1pt;
+    background-color: blue;
+}
+td#t4td5{
+    border: solid 1pt;
+    background-color: olive;
+}
+td#t4td6{
+    border: solid 1pt;
+    background-color: mediumpurple;
+}
+td#t4td7{
+    border: solid 1pt;
+    background-color: purple;
+}
+td#t4td8{
+    border: solid 1pt;
+    background-color: pink;
+}
