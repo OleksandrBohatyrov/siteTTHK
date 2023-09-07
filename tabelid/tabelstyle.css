@@ -1,0 +1,27 @@
+
+table{
+    border: solid 1pt yellow;
+    width: 60%;
+    text-align: center;
+
+
+}
+table#tabel1{
+
+    border: solid 1pt red;
+    width: 40%;
+    text-align: center;
+
+
+
+}
+table#tabel3{
+    border: solid 1pt green;
+    width: 60%;
+    text-align: center;
+    height: 200px;
+}
+td{
+    border: solid 1pt;
+
+}

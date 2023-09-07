@@ -1,0 +1,100 @@
+/*komentaar*/
+header{
+    color: maroon;
+    background-color: azure;
+    width: 60%;
+}
+header h1{
+    font-family: Algerian;
+    font-size: larger;
+    letter-spacing: 0.3cm;
+    border-bottom: solid 1pt red; /*dotted dashed double*/
+}
+li{
+    float: left;
+
+}
+li a{
+    display: block;
+    color: blue;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-right: solid 1px red;
+    font-variant: small-caps;
+}
+ul{
+    list-style-type: none;
+    margin:0; /*отступ*/
+    padding: 0; /*väli tekstist kuni */
+    overflow: hidden;
+    background-color: lightgray;
+}
+
+li a:hover{
+    background-color: orange;
+    color: purple;
+    text-decoration: underline
+}
+/**/
+.nimekiri {
+    list-style-type: circle;
+    margin:0; /*отступ*/
+    padding: 20px; /*väli tekstist kuni */
+    background-color: white;
+}
+img#pilt1{
+    width: 20%;
+}
+img#pilt2{
+    width: 25%;
+    border: dotted 2pt red;
+}
+img#pilt3{
+    width: 30%;
+    border: solid 1pt darkblue;
+    border-radius: 160px;
+}
+
+.sec_1 {
+    background-color: rgba(255, 99, 71, 0.5);
+    font-family: "Lucida Console";
+    text-shadow: 1px 1px #ff0000;
+    width: 50%;
+    border-radius: 10px;
+    border-bottom-color: deeppink;
+}
+
+
+.sec_2 {
+    background-color: darkgray;
+    border: inset 3pt black;
+    font-size: larger;
+    text-shadow: 3px 1px #ff0000;
+    border-right: red 20px;
+    width: 40%;
+    border-bottom-color: deeppink;
+    border-radius: 90px;
+}
+
+
+.sec_3{
+    border: dashed 3pt yellow;
+
+
+    color: #202c2d;
+    text-shadow:
+            0 1px #808d93,
+            -1px 0 #cdd2d5,
+            -1px 2px #808d93,
+            -2px 1px #cdd2d5,
+            -2px 3px #808d93;
+    background-color: powderblue;
+    opacity: 60%;
+    width: 70%;
+    border-collapse: revert;
+
+
+}
+
