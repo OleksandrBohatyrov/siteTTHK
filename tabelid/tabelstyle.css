@@ -22,7 +22,7 @@ table#tabel3{
     height: 200px;
 }
 td{
-    border: solid 1pt;
+    border: 0pt;
 
 }
 table#Tabel4{
@@ -66,3 +66,264 @@ td#t4td8{
     border: solid 1pt;
     background-color: pink;
 }
+/*Eesti lipp*/
+table#eesti{
+    width: 330px;
+    height: 210px;
+    border: 1pt solid grey;
+    border-spacing: 0;
+    position: absolute;
+    left: 400px;
+    top: 115px;
+}
+/*1.rida*/
+#eesti tr:nth-child(1) {
+    background-color: blue;
+    border: 0pt;
+}
+/*2.rida*/
+#eesti tr:nth-child(2) {
+    background-color: black;
+    border: 0pt;
+}
+/*3.rida*/
+#eesti tr:nth-child(3) {
+    background-color: white;
+    border: 0pt;
+}
+
+table#saksa{
+    width: 330px;
+    height: 210px;
+    border: 1pt solid grey;
+    border-spacing: 0;
+    position: absolute;
+    left: 20px;
+    top: 115px;
+}
+/*1.rida*/
+#saksa tr:nth-child(1) {
+    background-color: black;
+    border: 0pt;
+}
+/*2.rida*/
+#saksa tr:nth-child(2) {
+    background-color: red;
+    border: 0pt;
+}
+/*3.rida*/
+#saksa tr:nth-child(3) {
+    background-color: yellow;
+    border: 0pt;
+}
+
+table#prancuse{
+    position: absolute;
+    left: 750px;
+    top: 115px;
+    width: 330px;
+    height: 210px;
+    border: 1pt solid grey;
+    border-spacing: 0;
+
+}
+/*1.rida 1.lahter*/
+#prancuse tr:nth-child(1) td:nth-child(1) {
+    background-color: blue;
+    border: 0pt;
+}
+/*1.rida 2.lahter*/
+#prancuse tr:nth-child(1) td:nth-child(2){
+    background-color: white;
+    border: 0pt;
+}
+/*1.rida 2.lahter*/
+#prancuse tr:nth-child(1) td:nth-child(3){
+    background-color: red;
+    border: 0pt;
+}
+
+table#rootsi{
+    width: 330px;
+    height: 210px;
+    border: 1pt solid grey;
+    border-spacing: 0;
+    position: absolute;
+    left: 20px;
+    top: 350px;
+}
+/*1.rida 1.lahter ja 3.rida 1.lahter*/
+#rootsi tr:nth-child(1) td:nth-child(1),
+#rootsi tr:nth-child(3) td:nth-child(1) {
+    background-color: #006AA7;
+    border: 0pt;
+    width: 20%;
+}
+/*1.rida 2.lahter ja 3.rida  2.lahter*/
+#rootsi tr:nth-child(1) td:nth-child(2),
+#rootsi tr:nth-child(3) td:nth-child(2) {
+    background-color: #FECC02;
+    border: 0pt;
+    width: 15%;
+}
+/*1.rida 2.lahter ja 3.rida 2.lahter*/
+#rootsi tr:nth-child(1) td:nth-child(3),
+#rootsi tr:nth-child(3) td:nth-child(3) {
+    background-color: #006AA7;
+    border: 0pt;
+
+}
+/*2.rida*/
+#rootsi tr:nth-child(2){
+    background-color: #FECC02;
+    border: 0pt;
+    height: 25%;
+}
+
+#ireland {
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    left: 400px;
+    top: 350px;
+}
+/*1.rida 1.lahter ja 3.rida 1.lahter*/
+#ireland tr:nth-child(1) td:nth-child(1),
+#ireland tr:nth-child(5) td:nth-child(1) {
+    background-color: navy;
+    border: 0pt;
+    width: 20%;
+    height: 30%;
+}
+/*1.rida 2.lahter ja 3.rida  2.lahter*/
+#ireland tr:nth-child(1) td:nth-child(2),
+#ireland tr:nth-child(1) td:nth-child(4),
+#ireland tr:nth-child(5) td:nth-child(2),
+#ireland tr:nth-child(5) td:nth-child(4)
+{
+    background-color: whitesmoke;
+    border: 0pt;
+    width: 5%;
+}
+/*1.rida 2.lahter ja 3.rida 2.lahter*/
+#ireland tr:nth-child(2) td:nth-child(1),
+#ireland tr:nth-child(3) td:nth-child(3) {
+    background-color: whitesmoke;
+    border: 0pt;
+    height: 5%;
+
+}
+/*2.rida*/
+#ireland tr:nth-child(4) td:nth-child(1),
+#ireland tr:nth-child(4) td:nth-child(3) {
+    background-color: whitesmoke;
+    border: 0pt;
+    height: 5%;
+
+}
+#ireland tr:nth-child(3) td:nth-child(1) {
+    background-color: darkred;
+    border: 0pt;
+    height: 15%;
+
+}
+#ireland tr:nth-child(1) td:nth-child(3),
+#ireland tr:nth-child(2) td:nth-child(2),
+#ireland tr:nth-child(4) td:nth-child(2),
+#ireland tr:nth-child(5) td:nth-child(3){
+    background-color: darkred;
+    border: 0pt;
+    height: 10%;
+    width: 10%;
+
+}
+#ireland tr:nth-child(1) td:nth-child(5),
+tr:nth-child(5) td:nth-child(5){
+    background-color: navy;
+    border: 0;
+    width: 80%;
+}
+
+
+#ireland td {
+    border: none;
+}
+
+
+#tar {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    border-spacing: 0;
+
+    position: absolute;
+    left: 750px;
+    top: 350px;
+}
+
+
+
+/*1.rida*/
+#tar tr:nth-child(1) td:nth-child(1){
+    background-color: palevioletred;
+    height: 15%;
+    border: 0pt;
+}
+/*3.rida*/
+#tar tr:nth-child(3) td:nth-child(1){
+    background-color: palevioletred;
+    border: 0pt;
+    height: 20%;
+}
+/*2. rida 2. lahter*/
+#tar tr:nth-child(2) td:nth-child(2) {
+    background-color: yellow;
+    width: 15%;
+    height: 10%;
+    border: 0pt;
+}
+/*2. rida 1. lahter*/
+#tar tr:nth-child(2) td:nth-child(1) {
+    background-color: palevioletred;
+    width: 10%;
+    height: 10%;
+    border: 0pt;
+}
+/*2. rida 3,4,5 lahterid*/
+#tar tr:nth-child(2) td:nth-child(3),
+#tar tr:nth-child(2) td:nth-child(4),
+#tar tr:nth-child(2) td:nth-child(5){
+    background-color: palevioletred;
+    height: 10%;
+    border: 0pt;
+}
+
+/*4. rida 1,2,3 lahterid ja 5. rida 1,2,3 lahterid*/
+#tar tr:nth-child(4) td:nth-child(1),
+#tar tr:nth-child(4) td:nth-child(2),
+#tar tr:nth-child(4) td:nth-child(3),
+#tar tr:nth-child(5) td:nth-child(1),
+#tar tr:nth-child(5) td:nth-child(2),
+#tar tr:nth-child(5) td:nth-child(3){
+    background-color: lightpink;
+    border: 0pt;
+}
+/*4. rida 4,5 lahterid ja 5. rida 4. lahter*/
+#tar tr:nth-child(4) td:nth-child(5),
+#tar tr:nth-child(4) td:nth-child(4),
+#tar tr:nth-child(5) td:nth-child(4){
+    background-color: red;
+    height: 3%;
+    width: 5%;
+    border: 0pt;
+}
+/*5. rida 5. lahter*/
+#tar tr:nth-child(5) td:nth-child(5){
+    background-color: indianred;
+    height: 15%;
+    width: 20%;
+    border: 0pt;
+}
+
