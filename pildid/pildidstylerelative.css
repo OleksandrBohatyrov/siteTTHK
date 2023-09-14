@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    background-color: #afffa4;
+    font-family: Centaur, sans-serif;
+    font-size: 16px;
+}
+h2{
+    color: red;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: orange;
+    padding: 2%;
+}
+main{
+    background-color: lightgray;
+    height: 600px;
+}
+.esimene, .teine, .kolmas{
+    position: relative;
+
+}
+.esimene {
+    top: -30px ;
+    left:0px;
+    z-index: 3;
+}
+.teine {
+    top: -200px;
+    left: 150px;
+    z-index: 2;
+}
+.kolmas {
+    top: -600px;
+    left: 600px;
+    z-index: 1;
+}
+img{
+    border: 1px solid red;
+    width: 30%;
+}
+hr{
+    border: 5px solid black;
+    border-radius: 5px;
+}
