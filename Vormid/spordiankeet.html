@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spordi ankeet</title>
+</head>
+<body>
+<h1>Spordi ankeet</h1>
+<form name="ankeet">
+    <!--tekstikast-->
+    <label for="nimi">Nimi: </label>
+    <input type="text" name="nimi" placeholder="tekst">
+    <br>
+    <!--radionupp
+    <strong>Rühm</strong>
+    <br>
+    <input type="radio" name="ryhm" id="tarpv21">
+    <label for="tarpv21">TARpv21</label>
+    <br>
+    <input type="radio" name="ryhm" id="tarpv22" checked>
+    <label for="tarpv22">TARpv22</label>
+    <br>
+    <input type="radio" name="ryhm" id="tarpv23">
+    <label for="tarpv23">TARpv23</label>
+    <br>
+    <input type="radio" name="ryhm" id="tarpv23.5">
+    <label for="tarpv23.5">TARpv23.5</label>
+    <br><br>-->
+    <!--ripploend-->
+    <strong><label for="elu"> Kus sa elad?</label></strong>
+    <select name="elukoht" id="elu">
+        <option>Vali...</option>
+        <option>Tallinn</option>
+        <option>Parnu</option>
+        <option>Tartu</option>
+        <option>Narva</option>
+        <option>Valga</option>
+    </select>
+    <br><br>
+    <!--märkeruut-->
+    <strong>Vali oma spordialad!</strong>
+    <br>
+    <input type="checkbox" name="ujumine" id="ujumine">
+    <label for="ujumine">Ujumine</label>
+    <input type="checkbox" name="ujumine" id="jousaal">
+    <label for="jousaal">Jõusaal</label>
+    <input type="checkbox" name="ujumine" id="kasipall">
+    <label for="kasipall">Käsipall</label>
+    <input type="checkbox" name="ujumine" id="jooks">
+    <label for="jooks">Jooks</label>
+    <input type="checkbox" name="ujumine" id="Vorgpall">
+    <label for="Vorgpall">Võrgpall</label>
+    <br>
+    <input type="button" value="OK">
+    <br>
+    <table border="1px">
+        <tr>
+            <td>
+                Nimi
+            </td>
+            <td>
+                <label for="nimi"></label>
+                <input type="text" name="nimi" placeholder="tekst">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Rühm
+            </td>
+            <td>
+                <input type="radio" name="ryhm" id="tarpv21">
+                <label for="tarpv21">TARpv21</label>
+                <br>
+                <input type="radio" name="ryhm" id="tarpv22" checked>
+                <label for="tarpv22">TARpv22</label>
+                <br>
+                <input type="radio" name="ryhm" id="tarpv23">
+                <label for="tarpv23">TARpv23</label>
+                <br>
+                <input type="radio" name="ryhm" id="tarpv23.5">
+                <label for="tarpv23.5">TARpv23.5</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="pwd">Password:</label><br>
+            </td>
+            <td>
+                <input type="password" id="pwd" name="pwd">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="favcolor">Vali oma lemmikvärvr:</label>
+            </td>
+            <td>
+                <input type="color" id="favcolor" name="favcolor">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="birthday">Sünnipäev:</label>
+            </td>
+            <td>
+                <input type="date" id="birthday" name="birthday">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="birthdaytime">Sünnipäev (kuupäev ja kellaaeg):</label>
+            </td>
+            <td>
+                <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="myfile">Vali faili:</label>
+            </td>
+            <td>
+                <input type="file" id="myfile" name="myfile">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="quantity">Kogus (vahemikus 1 kuni 5):</label>
+            </td>
+            <td>
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="quantity">Quantity:</label>
+            </td>
+            <td>
+                <input type="number" id="quantity2" name="quantity2" min="0" max="100" step="10" value="30">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="week">Valige nädal:</label>
+            </td>
+            <td>
+                <input type="week" id="week" name="week">
+                <input type="submit">
+                <input type="reset">
+            </td>
+        </tr>
+
+
+
+    </table>
+</form>
+
+
+
+
+</body>
+</html>
