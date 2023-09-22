@@ -1,49 +1,67 @@
 /*komentaar*/
 header{
-    color: maroon;
-    background-color: azure;
+    color: wheat;
+    background-color: #333D51;
     width: 60%;
+    margin-left: 220px;
 }
 header h1{
     font-family: Algerian;
     font-size: larger;
     letter-spacing: 0.3cm;
-    border-bottom: solid 1pt red; /*dotted dashed double*/
+    border-bottom: solid 2pt deeppink; /*dotted dashed double*/
 }
+li{
+    float: left;
 
-ul {
+
+}
+main {
+    margin-left: 220px;
+
+
+}
+body{  background-color: #333D51 ;}
+nav li {
+    display: block;
+    text-align: left;
+
+
+}
+nav li a {
+    font-size: 20px;
+    text-decoration: none;
+
+    color: black;
+    padding: 10px 5px;
+    border-bottom: solid 1px red;
+    border-bottom-right-radius: 90px; /*Zakruglenie*/
+    font-variant: small-caps;
+    font-weight: bold;
+    display: block;
+    width: 90%;
+    box-shadow: 0 5px 4px 0 rgba(0,0,0,.2); /*Shadows*/
+}
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #333;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Make the menu vertical */
+    background-color: #f4d12f ;
 }
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
-}
-
-
-
-
-li a:hover{
+nav li a:hover {
     background-color: orange;
-    color: purple;
-    text-decoration: underline
-}*
+    color: #202c2d;
+
+    text-decoration: underline;
+}
 /**/
 .nimekiri {
     list-style-type: circle;
@@ -65,12 +83,14 @@ img#pilt3{
 }
 
 .sec_1 {
-    background-color: rgba(255, 99, 71, 0.5);
+
     font-family: "Lucida Console";
-    text-shadow: 1px 1px #ff0000;
-    width: 50%;
+    text-shadow: 2px 1px #ff0000;
+    width: 100%;
     border-radius: 10px;
     border-bottom-color: deeppink;
+    color: #CBD0D8 ;
+    font-size: large;
 }
 
 
@@ -80,11 +100,14 @@ img#pilt3{
     font-size: larger;
     text-shadow: 3px 1px #ff0000;
     border-right: red 20px;
-    width: 40%;
+    width: 50%;
     border-bottom-color: deeppink;
-    border-radius: 90px;
+    border-radius: 50px;
 }
-
+.h2sec{
+    left: 600px;
+    color: #CBD0D8 ;
+}
 
 .sec_3{
     border: dashed 3pt yellow;
@@ -104,4 +127,5 @@ img#pilt3{
 
 
 }
+
 
