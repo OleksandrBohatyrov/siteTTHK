@@ -1,9 +1,78 @@
 /*komentaar*/
-header{
-    color: maroon;
-    background-color: azure;
-    width: 60%;
+/* Общие стили для всего контента */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f0f0f0;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px 0 ;
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: #333;
+    text-align: center;
+   
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+  
+}
+
+/* Стили для основного содержимого */
+main {
+    padding: 20px;
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Дополнительные стили для разделов на странице */
+.sec_1, .sec_2, .sec_3 {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
 header h1{
     font-family: Algerian;
     font-size: larger;
@@ -21,6 +90,7 @@ ul {
 
 li {
     float: left;
+    
 }
 
 li a {
