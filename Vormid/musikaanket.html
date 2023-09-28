@@ -2,11 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spordi ankeet</title>
+    <title>Muusika ankeet</title>
     <link rel="stylesheet" type="text/css" href="formstyle.css">
 </head>
 <body>
+    <div class="container">
 <h1>Muusika ankeet</h1>
+<header>
+    <h1>
+        Oleksandr veebirakenduste leht
+    </h1>
+<nav>
+    <ul>
+        <li>
+            <a href="/index.html">Kodu</a>
+        </li>
+        <li>
+           <a href="/lingid.html">Kasulikud lingid</a>
+        </li>
+        <li>
+           <a href="/tood.html">Tööd</a>
+        </li>
+        <li>
+            <a href="https://github.com/OleksandrBohatyrov">GitHub</a>
+        </li>
+        <li>
+            <a href="https://oleksandrbohatyrov22.thkit.ee/wp/">WordPress</a>
+        </li>
+    </ul>
+
+</nav>
+<main>
 <form name="ankeet">
 
     <table>
@@ -79,8 +105,8 @@
             <td>
 
                 <input type="range" id="points2" name="points" min="0" max="1">
-                <label for="points2">Ei</label>
-                <label class="ei" for="points2">Jah</label>
+                <label class="ei" for="points2">Ei</label>
+                <label class="jah" for="points2">Jah</label>
             </td>
         </tr>
         </tr>
@@ -92,87 +118,55 @@
             </td>
         </tr>
         <tr>
+            <td>Kes muusikuid sa tead?</td>
             <td>
-                <label>Kes muusikuid/ ansambleid sa tead?</label>
+                <input type="checkbox" name="beatles" id="beatles">
+                <label for="beatles">The Beatles</label><br>
+                <input type="checkbox" name="Micheal" id="Micheal">
+                <label for="Micheal">Michael Jackson</label><br>
+                <input type="checkbox" name="Madonna" id="Madonna">
+                <label for="Madonna">Madonna</label><br>
+                <input type="checkbox" name="Bob Marley" id="BobMarley">
+                <label for="BobMarley">Bob Marley</label><br>
+                <input type="checkbox" name="cent" id="cent">
+                <label for="cent">50 cent</label><br>
             </td>
+        <tr>
+            <td>Milliseid muusikainstrumente sa mängid või sooviksid õppida mängima?</td>
             <td>
-                <input type="checkbox" id="bts" name="bts" value="BTS">
-                <label for="bts">BTS</label>
-                <input type="checkbox" id="rms" name="rms" value="RMS">
-                <label for="rms">Rammstein</label>
+                <input type="radio" name="instrument" id="kitarr" value="kitarr">
+                <label for="kitarr">kitarr</label><br>
+                <input type="radio" name="instrument" id="klaver" value="klaver">
+                <label for="klaver">klaver</label><br>
+                <input type="radio" name="instrument" id="viiul" value="viiul">
+                <label for="viiul">viiul</label><br>
+                <input type="radio" name="instrument" id="trummid" value="trummid">
+                <label for="trummid">trummid</label><br>
+                <input type="radio" name="instrument" id="muu" value="muu">
+                <label for="muu">muu</label><br>
 
             </td>
         </tr>
         <tr>
-            <td>
-                <label for="quantity">Kogus (vahemikus 1 kuni 5):</label>
-            </td>
-            <td>
-                <input type="number" id="quantity" name="quantity" min="1" max="5">
-            </td>
+            <td><label for="kontsert">Kas on mõni kontsert või muusikaüritus, kuhu sa unistad minna?</label></td>
+            <td><input type="text" name="kontsert" id="kontsert" placeholder=""></td>
         </tr>
         <tr>
-            <td>
-                <label for="quantity">Mitu korda päevas te treenite:</label>
-            </td>
-            <td>
-                <input type="number" id="quantity2" name="quantity2" min="0" max="100" step="10" value="30">
-            </td>
+            <td><label for="musik">Kuidas kasutate muusikat oma igapäevaelus?</label></td>
+            <td><input type="text" name="musik" id="musik" placeholder=""></td>
         </tr>
         <tr>
-            <td><label for="cars">Valige auto:</label></td>
-            <td>
-                <select  name="cars" id="cars">
-                    <optgroup label="Swedish Cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                    </optgroup>
-                    <optgroup label="German Cars">
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </optgroup>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="Trennis">Valige oma lemmik treeningtüüp</label>
-            </td>
-            <td>
-                <input list="Trennis" name="vid" id="vid">
-                <datalist id="Trennis">
-                    <option value="Jalad">
-                    <option value="Käed">
-                    <option value="Õlad">
-                </datalist>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="points">Koolituste arv kuus(0-10)</label>
-            </td>
-            <td>
-                <input type="range" id="points" name="points" min="0" max="10">
-            </td>
-        </tr>
 
-        <tr>
-            <td>
-                <label for="week">Valige nädal:</label>
-            </td>
-            <td>
-                <input type="week" id="week" name="week">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit">
-            </td>
-            <td>
-                <input type="reset">
-            </td>
+            <td colspan="2"><input type="submit" value="OK"></td>
         </tr>
     </table>
 </form>
+</main>
+<!--jalus-->
+<footer>
+<strong>&copy; O. Bohatyrov</strong>
+
+</footer>
+</div>
 </body>
 </html>

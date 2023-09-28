@@ -1,8 +1,121 @@
 table{
-    width: 70%;
+    width: 100%;
     border-spacing: 2px;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px 0 ;
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: #333;
+    text-align: center;
+   
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+  
+}
+
+/* Стили для основного содержимого */
+main {
+    padding: 20px;
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Дополнительные стили для разделов на странице */
+.sec_1, .sec_2, .sec_3 {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+header h1{
+    font-family: Algerian;
+    font-size: larger;
+    letter-spacing: 0.3cm;
+    border-bottom: solid 1pt red; /*dotted dashed double*/
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+
+
+
+li a:hover{
+    background-color: orange;
+    color: purple;
+    text-decoration: underline
+}*
 
 input[type=text], select {width: 100%;
 padding: 12px 20px;
@@ -175,10 +288,16 @@ input[type="range"]:focus::-moz-range-thumb{
     outline: 3px solid #808080;
     outline-offset: 0.125rem;
 }
+
 .ei {
     position: absolute;
-    left: 640px;
-    top: 415px;
+    left: 800px;
+    top: 580px;
+}
+.jah {
+    position: absolute;
+    left: 1150px;
+    top: 580px;
 }
 
 input[type="checkbox"] {
@@ -194,6 +313,22 @@ input[type="checkbox"] {
     transform: translateY(-0.075em);
     display: grid;
     place-content: center;
+    cursor: pointer; /* Добавьте указатель мыши, чтобы пользователи могли кликнуть */
+}
+
+/* Стилизация флажков, когда они выбраны (checked) */
+input[type="checkbox"]:checked {
+    background-color: #009688; /* Пример: зеленый фон для выбранных флажков */
+    color: #fff; /* Белый текст для выбранных флажков */
+    border-color: #009688; /* Цвет рамки для выбранных флажков */
+}
+
+
+/* Стилизация флажков, когда они выбраны (checked) */
+input[type="radio"]:checked {
+    background-color: #009688; /* Пример: зеленый фон для выбранных флажков */
+    color: #fff; /* Белый текст для выбранных флажков */
+    border-color: #009688; /* Цвет рамки для выбранных флажков */
 }
 
 
