@@ -6,26 +6,10 @@
     <link rel="stylesheet" type="text/css" href="formstyle.css">
 </head>
 <body>
-<h1>Spordi ankeet</h1>
+<h1>Muusika ankeet</h1>
 <form name="ankeet">
-    <!--tekstikast-->
-    <!--radionupp
-    <strong>Rühm</strong>
-    <br>
-    <input type="radio" name="ryhm" id="tarpv21">
-    <label for="tarpv21">TARpv21</label>
-    <br>
-    <input type="radio" name="ryhm" id="tarpv22" checked>
-    <label for="tarpv22">TARpv22</label>
-    <br>
-    <input type="radio" name="ryhm" id="tarpv23">
-    <label for="tarpv23">TARpv23</label>
-    <br>
-    <input type="radio" name="ryhm" id="tarpv23.5">
-    <label for="tarpv23.5">TARpv23.5</label>
-    <br><br>-->
-    <!--ripploend-->
-    <table border="1px">
+
+    <table>
         </tr>
         <tr>
             <td>
@@ -38,62 +22,85 @@
         </tr>
         <tr>
             <td>
-                Rühm
+                Millist muusika sa kuulad enam?
             </td>
             <td>
                 <div class="radio-container">
-                <input type="radio"  class="option-input radio" name="ryhm" id="tarpv21">
-                <label for="tarpv21">TARpv21</label>
-                <br>
-                <input type="radio" class="option-input radio"  name="ryhm" id="tarpv22" checked>
-                <label for="tarpv22">TARpv22</label>
-                <br>
-                <input type="radio" class="option-input radio"  name="ryhm" id="tarpv23">
-                <label for="tarpv23">TARpv23</label>
-                <br>
-                <input type="radio"  class="option-input radio" name="ryhm" id="tarpv23.5">
-                <label for="tarpv23.5">TARpv23.5</label>
+                    <input type="radio"  class="option-input radio" name="style" id="dzass">
+                    <label for="dzass">Džäss</label>
+                    <br>
+                    <input type="radio" class="option-input radio"  name="style" id="dnb" checked>
+                    <label for="dnb">Drum and bass</label>
+                    <br>
+                    <input type="radio" class="option-input radio"  name="style" id="hiphop">
+                    <label for="hiphop">Hiphop</label>
+                    <br>
+                    <input type="radio"  class="option-input radio" name="style" id="lofi">
+                    <label for="lofi">Lo-Fi</label>
+                    <br>
+                    <input type="radio" class="option-input radio"  name="style" id="hardstyle">
+                    <label for="hardstyle">Hardstyle</label>
+                    <br>
+                    <input type="radio"  class="option-input radio" name="style" id="beatbox">
+                    <label for="beatbox">Beatbox</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="music">Mida sa arvad muusika kuulamisest koolis?</label></td>
+            <td>
+                <select  name="Musica" id="music">
+                    <option value="vali">Vali...</option>
+                        <option value="tuleks">Muusika tuleks koolist keelata</option>
+                        <option value="kuulata">Tunnis võib kuulata muusikat</option>
+                        <option value="olema">Muusika peab olema valjuhääldi sisse lülitatud.</option>
+                        <option value="vaheajal">Me peaksime keelama muusika vaheajal</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="quantity">Kas saate ka muusikat kuulata telefonist?</label>
+            </td>
+            <td>
+                <div class="radio-container">
+                    <input type="radio"  class="option-input radio" name="ryhm" id="jah">
+                    <label class="label1"  for="Jah">Jah</label>
+                    <br>
+                    <input type="radio" class="option-input radio"  name="ryhm" id="ei" checked>
+                    <label class="label1" for="Ei">Ei</label>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
-                <label for="pwd">Password:</label><br>
+                <label for="points2">Kas sa kuulad raadiot?:</label>
             </td>
             <td>
-                <input type="password" id="pwd" name="pwd">
+
+                <input type="range" id="points2" name="points" min="0" max="1">
+                <label for="points2">Ei</label>
+                <label class="ei" for="points2">Jah</label>
+            </td>
+        </tr>
+        </tr>
+        <tr>
+            <td><label for="message">Millised raadiojaame oskate nimetada?</label></td>
+            <td>
+                <textarea name="message" id="message" style="width: 300px; height: 100px;">
+                </textarea>
             </td>
         </tr>
         <tr>
             <td>
-                <label for="favcolor">Vali oma lemmikvärvr:</label>
+                <label>Kes muusikuid/ ansambleid sa tead?</label>
             </td>
             <td>
-                <input type="color" id="favcolor" name="favcolor">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="birthday">Sünnipäev:</label>
-            </td>
-            <td>
-                <input type="date" id="birthday" name="birthday">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="birthdaytime">Sünnipäev (kuupäev ja kellaaeg):</label>
-            </td>
-            <td>
-                <input type="datetime-local" id="birthdaytime" name="birthdaytime">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="myfile">Vali faili:</label>
-            </td>
-            <td>
-                <input type="file" id="myfile" name="myfile">
+                <input type="checkbox" id="bts" name="bts" value="BTS">
+                <label for="bts">BTS</label>
+                <input type="checkbox" id="rms" name="rms" value="RMS">
+                <label for="rms">Rammstein</label>
+
             </td>
         </tr>
         <tr>
@@ -110,15 +117,6 @@
             </td>
             <td>
                 <input type="number" id="quantity2" name="quantity2" min="0" max="100" step="10" value="30">
-            </td>
-        </tr>
-        </tr>
-        <tr>
-            <td><label for="message">Type something</label></td>
-            <td>
-                <textarea name="message" id="message" style="width: 300px; height: 100px;">
-                4to-to...
-                </textarea>
             </td>
         </tr>
         <tr>
