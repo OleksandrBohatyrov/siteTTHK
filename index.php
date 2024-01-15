@@ -78,7 +78,7 @@
 <div class="container">
     <div class="cont">
         <header>
-            <?php //require
+            <?php //require1
             if (isset($_GET["veebileht"])) {
                 include(''.$_GET["veebileht"]);
 
