@@ -1,66 +1,53 @@
 <?php
-require_once('conf.php');
+require_once ('conf.php');
 session_start();
 //punktide lisamine
 if(isset($_REQUEST["heatants"])){
     global $yhendus;
-    $kask = $yhendus->prepare("UPDATE tantsud SET punktid=punktid+1 WHERE id=?");
+    $kask=$yhendus->prepare("UPDATE tantsud SET punktid = punktid+1 WHERE id=?");
     $kask->bind_param("i", $_REQUEST["heatants"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    echo '<script>closeModal();</script>';
-    exit();
 }
-if(isset($_REQUEST["paarinimi"]) && !empty($_REQUEST["paarinimi"]) && isAdmin()){
-    global$yhendus;
-    $kask=$yhendus->prepare("INSERT INTO tantsud (tantsupaar, ava_paev) VALUES (?, NOW())");
-    $kask->bind_param("s", $_REQUEST["paarinimi"]);
+//punktide vähendamine
+if(isset($_REQUEST["pahatants"])){
+    global $yhendus;
+    $kask=$yhendus->prepare("UPDATE tantsud SET punktid = punktid-1 WHERE id=?");
+    $kask->bind_param("i", $_REQUEST["pahatants"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    echo '<script>closeModal();</script>';
-    exit();
 }
-
-if(isset($_REQUEST["heatantsDel"])){
-    global$yhendus;
-    $kask=$yhendus->prepare("UPDATE tantsud SET punktid=punktid-1 WHERE id=?");
-    $kask->bind_param("i", $_REQUEST["heatantsDel"]);
+if(isset($_REQUEST["paarinimi"]) && !empty($_REQUEST["paarinimi"]) && isAdmin()){
+    global $yhendus;
+    $kask=$yhendus->prepare("INSERT INTO tantsud (tantsupaar,ava_paev) values (?, NOW())");
+    $kask->bind_param("s", $_REQUEST["paarinimi"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
     $yhendus->close();
     exit();
 }
-
-
-
-//kommentaaride lisamine
-if(isset($_REQUEST["komment"])) {
-    if (!empty($_REQUEST["uuskomment"])){
-    global$yhendus;
-    $kask=$yhendus->prepare("UPDATE tantsud SET kommentaarid=CONCAT(kommentaarid, ?) WHERE id=?");
-    $kommentplus=$_REQUEST["uuskomment"]. "\n";
-    $kask->bind_param("si", $kommentplus, $_REQUEST["komment"]);
+if(isset($_REQUEST["komment"])){
+    if(isset($_REQUEST["uuskomment"]) && !empty(trim($_REQUEST["uuskomment"]))){
+    global $yhendus;
+    $kask=$yhendus->prepare("UPDATE tantsud SET kommentaarid=Concat(kommentaarid, ?) WHERE id=?");
+    $kommentaarplus=$_REQUEST["uuskomment"]."\n";
+    $kask->bind_param("si",$kommentaarplus, $_REQUEST["komment"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    echo '<script>closeModal();</script>';
+    $yhendus->close();
     exit();
     }
 }
-
-
-if(isset($_REQUEST["kustuta"]) && !empty($_REQUEST["kustuta"])){
-    global$yhendus;
-    $kask=$yhendus->prepare("DELETE FROM tantsud where id=?");
-    $kask->bind_param("s", $_REQUEST["kustuta"]);
+if(isset($_REQUEST["kustuta"])){
+    global $yhendus;
+    $kask = $yhendus->prepare("DELETE FROM tantsud WHERE id=?");
+    $kask->bind_param("i", $_REQUEST["kustuta"]);
     $kask->execute();
+    header("Location: $_SERVER[PHP_SELF]");
 }
-
-
-    function isAdmin() {
-        return isset($_SESSION['onAdmin']) && $_SESSION['onAdmin'];
-    }
-
-
+function isAdmin(){
+    return isset($_SESSION['onAdmin']) && $_SESSION['onAdmin'] == 1;
+}
 ?>
 
 <!doctype html>
@@ -77,16 +64,53 @@ if(isset($_REQUEST["kustuta"]) && !empty($_REQUEST["kustuta"])){
             window.opener.location.reload();
             window.close();
         }
+        function avaModalLog() {
+            document.getElementById("modal_log").style.display = "flex";
+        }
+
+        function avaModalReg() {
+            document.getElementById("modal_reg").style.display = "flex";
+        }
+
+        function suleModalLog() {
+            document.getElementById("modal_log").style.display = "none";
+        }
+
+        function suleModalReg() {
+            document.getElementById("modal_reg").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modalLog = document.getElementById("modal_log");
+            if (event.target == modalLog) {
+                suleModalLog();
+            }
+
+            var modalReg = document.getElementById("modal_reg");
+            if (event.target == modalReg) {
+                suleModalReg();
+            }
+        }
     </script>
 </head>
     <?php
     require ('nav.php');
     ?>
 <body>
-    <div id="modal">
-        <div class="modal__windows">
+<div id="modal_log">
+        <div class="modal__window">
             <a class="modal__close" href="#">X</a>
-            <?php require 'login.php'; ?>
+            <?php
+            require 'login.php';
+            ?>
+        </div>
+    </div>
+    <div id="modal_reg">
+        <div class="modal__window">
+            <a class="modal__close" href="#">X</a>
+            <?php
+            require 'register.php';
+            ?>
         </div>
     </div>
 

@@ -57,14 +57,48 @@ if(isset($_REQUEST["kustutakomment"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Tantsud tähtedega</title>
+    <script>
+        function avaModalLog() {
+            document.getElementById("modal_log").style.display = "flex";
+        }
+
+        function suleModalLog() {
+            document.getElementById("modal_log").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modalLog = document.getElementById("modal_log");
+            if (event.target == modalLog) {
+                suleModalLog();
+            }
+        }
+    </script>
 </head>
+<div class="container">
 <header>
     <?php
     require ('nav.php');
+    if(isset($_SESSION['kasutaja'])){
+    } else {
+        ?>
+        <div class="open">
+            <a href="#modal_log" onclick="avaModalLog()">Logi sisse</a>
+        </div>
+        <?php
+    }
     ?>
+
 </header>
 <body>
-<div class="container">
+
+<div id="modal_log">
+        <div class="modal__window">
+            <a class="modal__close" href="#">X</a>
+            <?php
+            require 'login.php';
+            ?>
+        </div>
+    </div>
 <h1>Tantsud tähtedega</h1>
 <h2>Administreerimis leht</h2>
 <table>
