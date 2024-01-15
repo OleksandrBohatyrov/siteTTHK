@@ -89,7 +89,7 @@
         </header>
 
         <main>
-            <?php
+            <?php //require3
             require('main.php'); ?>
         </main>
         <footer>
