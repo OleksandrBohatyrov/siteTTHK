@@ -26,7 +26,9 @@ if (!function_exists('isAdmin')) {
                     <?php
                 } else {
                     ?>
-                    <a href="#modal">Logi sisse</a>
+                    <div style="background-color: #333;">
+                    <a style='display: inline'; href="#modal">Logi sisse</a>
+                    <a style="display: inline" href="#modal2">Registreerimine</a></div>
                     <?php
                 }
                 ?>
@@ -34,3 +36,5 @@ if (!function_exists('isAdmin')) {
         </ul>
     </nav>
 </div>
+
+

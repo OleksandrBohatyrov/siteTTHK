@@ -1,14 +1,14 @@
 <?php
-require_once('conf2.php');
+require_once('conf.php');
 session_start();
 //punktide lisamine
 if(isset($_REQUEST["heatants"])){
-    global$yhendus;
-    $kask=$yhendus->prepare("UPDATE tantsud SET punktid=punktid+1 WHERE id=?");
+    global $yhendus;
+    $kask = $yhendus->prepare("UPDATE tantsud SET punktid=punktid+1 WHERE id=?");
     $kask->bind_param("i", $_REQUEST["heatants"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    $yhendus->close();
+    echo '<script>closeModal();</script>';
     exit();
 }
 if(isset($_REQUEST["paarinimi"]) && !empty($_REQUEST["paarinimi"]) && isAdmin()){
@@ -17,7 +17,7 @@ if(isset($_REQUEST["paarinimi"]) && !empty($_REQUEST["paarinimi"]) && isAdmin())
     $kask->bind_param("s", $_REQUEST["paarinimi"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    $yhendus->close();
+    echo '<script>closeModal();</script>';
     exit();
 }
 
@@ -42,7 +42,7 @@ if(isset($_REQUEST["komment"])) {
     $kask->bind_param("si", $kommentplus, $_REQUEST["komment"]);
     $kask->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    $yhendus->close();
+    echo '<script>closeModal();</script>';
     exit();
     }
 }
@@ -57,7 +57,7 @@ if(isset($_REQUEST["kustuta"]) && !empty($_REQUEST["kustuta"])){
 
 
     function isAdmin() {
-        return ($_SESSION['onAdmin']) && $_SESSION['onAdmin'];
+        return isset($_SESSION['onAdmin']) && $_SESSION['onAdmin'];
     }
 
 
@@ -72,18 +72,24 @@ if(isset($_REQUEST["kustuta"]) && !empty($_REQUEST["kustuta"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Tantsud tähtedega</title>
+    <script>
+        function closeModal() {
+            window.opener.location.reload();
+            window.close();
+        }
+    </script>
 </head>
     <?php
     require ('nav.php');
     ?>
 <body>
-<div id="modal">
-    <div class="modal__windows">
-        <a class="modal__close" href="#">X</a>
-        <?php
-        require 'login.php' ?>
+    <div id="modal">
+        <div class="modal__windows">
+            <a class="modal__close" href="#">X</a>
+            <?php require 'login.php'; ?>
+        </div>
     </div>
-</div>
+
 <div class="container">
 <h1>Tantsud tähtedega</h1>
 <h2>Punktide lisamine</h2>

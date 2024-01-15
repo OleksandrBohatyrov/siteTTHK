@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('conf2.php');
+require_once('conf.php');
 
 //punktide nulliks
 if(isset($_REQUEST["punktid0"])){
