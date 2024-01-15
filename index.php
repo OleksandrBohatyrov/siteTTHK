@@ -84,7 +84,7 @@
 
             }
             ?>
-            <?php
+            <?php //require2
             require('nav.php'); ?>
         </header>
 
