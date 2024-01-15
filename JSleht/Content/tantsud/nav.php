@@ -36,5 +36,3 @@ if (!function_exists('isAdmin')) {
         </ul>
     </nav>
 </div>
-
-
