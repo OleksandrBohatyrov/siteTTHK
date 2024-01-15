@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joonestamine</title>
+    <link rel="stylesheet" type="text/css" href="/joonistamine/joonis.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="/joonistamine/joonisscript.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+
+<nav>
+    <ul>
+        <li>
+            <a href="/index.html">Kodu</a>
+        </li>
+        <li>
+            <a href="/lingid.html">Kasulikud lingid</a>
+        </li>
+        <li>
+            <a href="/tood.html">Tööd</a>
+        </li>
+        <li>
+            <a href="https://github.com/OleksandrBohatyrov">GitHub</a>
+        </li>
+        <li>
+            <a href="https://oleksandrbohatyrov22.thkit.ee/wp/">WordPress</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<h1>Joonis</h1>
+    <main>
+<canvas id="kanva">
+</canvas>
+    <br>
+    <input type="button" value="kustuta" onclick="kustuta()">
+    <input type="button" value="joon" onclick="joon()">
+
+        <br>
+
+        <label for="laius">Laius</label>
+        <input type="number" id="laius" min="10">
+        <label for="korgus">Kõrgus</label>
+        <input type="number" id="korgus">
+        <input type="button" value="ristkülik" onclick="ristkylik()">
+        <input type="button" value="ring" onclick="ring()">
+        <br>
+        <br><br>
+    <canvas id="kanva2" width="500" height="400">
+    </canvas>
+
+    <input type="button" value="kustuta" onclick="kustuta2()">
+    <input type="button" value="joon" onclick="drawall()">
+        <br>
+        <input type="button" id="3" value=" " onclick="drawHead()">
+        <label for="3">Pea</label>
+        <br>
+        <input type="button" id="0" value=" " onclick="drawHair()">
+        <label for="0">Juuksed</label>
+        <br>
+        <input type="button" id="1" value=" " onclick="drawFace()">
+        <label for="1">Nägu</label>
+        <br>
+        <input type="button" id="2" value=" " onclick="drawEyes()">
+        <label for="2">Silmad</label>
+        <br>
+
+        <input type="button" id="4" value=" " onclick="drawBody()">
+        <label for="4">Keha</label>
+        <br>
+        <input type="button" id="5" value=" " onclick="drawleftarm()">
+        <label for="5">Vasak käsi</label>
+
+        <input type="button" id="6" value=" " onclick="drawrightarm()">
+        <label for="6">Parem käsi</label>
+        <br>
+        <input type="button" id="7" value=" " onclick="drawLeftLeg()">
+        <label for="7">Vasak jalg</label>
+
+        <input type="button" id="8" value=" " onclick="drawRightLeg()">
+        <label for="8">Parem jalg</label>
+        <br>
+        <input type="button" id="9" value=" " onclick="drawBelt()">
+        <label for="9">Vöö</label>
+        <br>
+        <br>
+        <input type="button" id="10" value=" " onclick="drawBow()">
+        <label for="10"></label>
+
+        <br>
+    </main>
+    <!--jalus-->
+    <br>
+    <footer>
+        <strong>&copy; O. Bohatyrov</strong>
+
+    </footer>
+</div>
+</body>
+</html>
