@@ -1,10 +1,19 @@
-/*komentaar*/
+/* Переменные для цветов */
+:root {
+    --main-bg-color: #f0f0f0;
+    --main-text-color: #333;
+    --menu-bg-color: #333;
+    --menu-text-color: white;
+    --link-hover-color: orange;
+    --link-hover-text-color: purple;
+}
+
 /* Общие стили для всего контента */
 body {
     font-family: Arial, sans-serif;
     margin: 0 auto;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: var(--main-bg-color);
 }
 
 .container {
@@ -18,48 +27,37 @@ body {
 /* Стили для заголовка */
 header {
     background-color: #fff;
-    color: #333;
+    color: var(--main-text-color);
     text-align: center;
-    padding: 20px 0 ;
+    padding: 20px 0;
 }
 
 /* Стили для навигационного меню */
 nav {
-    background-color: #333;
+    background-color: var(--menu-bg-color);
     text-align: center;
-   
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-   
 }
 
 nav li {
     display: inline;
     margin-right: 20px;
-    
 }
 
 nav a {
     text-decoration: none;
-    color: white;
-  
+    color: var(--menu-text-color);
 }
 
-/* Стили для основного содержимого */
-main {
-    padding: 20px;
-}
-
-/* Стили для подвала */
-footer {
-    background-color: #333;
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #111;
     color: white;
-    text-align: center;
-    padding: 10px 0;
 }
 
 /* Дополнительные стили для разделов на странице */
@@ -72,12 +70,11 @@ footer {
     border-radius: 10px;
 }
 
-
-header h1{
+header h1 {
     font-family: Algerian;
     font-size: larger;
     letter-spacing: 0.3cm;
-    border-bottom: solid 1pt red; /*dotted dashed double*/
+    border-bottom: solid 1pt red;
 }
 
 ul {
@@ -90,7 +87,6 @@ ul {
 
 li {
     float: left;
-    
 }
 
 li a {
@@ -103,32 +99,28 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: var(--link-hover-color);
+    color: var(--link-hover-text-color);
 }
 
-
-
-
-li a:hover{
-    background-color: orange;
-    color: purple;
-    text-decoration: underline
-}*
-/**/
+/* Дополнительные стили */
 .nimekiri {
     list-style-type: circle;
-    margin:0; /*отступ*/
-    padding: 20px; /*väli tekstist kuni */
+    margin: 0;
+    padding: 20px;
     background-color: white;
 }
-img#pilt1{
+
+img#pilt1 {
     width: 20%;
 }
-img#pilt2{
+
+img#pilt2 {
     width: 25%;
     border: dotted 2pt red;
 }
-img#pilt3{
+
+img#pilt3 {
     width: 30%;
     border: solid 1pt darkblue;
     border-radius: 160px;
@@ -143,7 +135,6 @@ img#pilt3{
     border-bottom-color: deeppink;
 }
 
-
 .sec_2 {
     background-color: darkgray;
     border: inset 3pt black;
@@ -155,23 +146,53 @@ img#pilt3{
     border-radius: 90px;
 }
 
-
-.sec_3{
+.sec_3 {
     border: dashed 3pt yellow;
-
-
     color: #202c2d;
     text-shadow:
-            0 1px #808d93,
-            -1px 0 #cdd2d5,
-            -1px 2px #808d93,
-            -2px 1px #cdd2d5,
-            -2px 3px #808d93;
+        0 1px #808d93,
+        -1px 0 #cdd2d5,
+        -1px 2px #808d93,
+        -2px 1px #cdd2d5,
+        -2px 3px #808d93;
     background-color: powderblue;
     opacity: 60%;
     width: 70%;
     border-collapse: revert;
+    display: none;
+}
 
+.hamburger {
+    display: none;
+    
+}
+
+.hamburger .line {
+    width: 24px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.hamburger:hover {
+    cursor: pointer;
+}
+
+#hamburger-1.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger-1.is-active .line:nth-child(1){
+    -webkit-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
+}
+
+ 
+#hamburger-1.is-active .line:nth-child(3){ 
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
 
 }
 

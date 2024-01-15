@@ -1,0 +1,11 @@
+div#tekst{
+    width: 200px;
+    position: absolute;
+    left: 20px;
+    top: 200px;
+    border: solid 1px green;
+    padding: 1%;
+}
+h1{
+    display: none;
+}

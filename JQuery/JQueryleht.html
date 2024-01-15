@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery CDN</title>
+    <link rel="stylesheet" type="text/css" href="/JQuery/jqueryStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function kollane() {
+            $("div#tekst").css("color", "yellow");
+        }
+        function mustaks() {
+            $("div#tekst").css("color", "black");
+        }
+        function hiireTegevus() {
+            $("div#tekst").mouseenter(kollane);
+            $("div#tekst").mouseleave(mustaks);
+        }
+        $(document).ready(function (){
+            $("#nupp1").click(function(){
+                $("h1").fadeIn();
+                $("h1").fadeIn("slow");
+                $("h1").fadeIn(3000);
+            });
+        });
+
+        function teade(){
+            alert("Kohe näitan teksti!")
+        }
+
+    </script>
+</head>
+<body onload="hiireTegevus()">
+<h1>mis on JQuery CDN</h1>
+<div id="tekst">jQuery on JavaScripti teek, mis keskendub JavaScripti ja HTML-i vastastikusele mõjule.</div>
+<input type="button" value="Paremale" onClick="$('div#tekst').animate({left:'500px'}, 1000)">
+<input type="button" value="Vasakule" onClick="$('div#tekst').animate({left:'20px'}, 2000)">
+<br>
+<input type="button" value="Peida" onClick="$('div#tekst').hide(2000)">
+<input type="button" value="Näita" onClick="$('div#tekst').show(2000, teade)">
+<br>
+<input type="button" id="nupp1" value="FadeIn" onClick="peida">
+</body>
+</html>

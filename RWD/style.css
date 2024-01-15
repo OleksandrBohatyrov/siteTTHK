@@ -1,0 +1,198 @@
+/* Переменные для цветов */
+:root {
+    --main-bg-color: #f0f0f0;
+    --main-text-color: #333;
+    --menu-bg-color: #333;
+    --menu-text-color: white;
+    --link-hover-color: orange;
+    --link-hover-text-color: purple;
+}
+
+/* Общие стили для всего контента */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #fff;
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: var(--menu-bg-color);
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--menu-text-color);
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #111;
+    color: white;
+}
+
+/* Дополнительные стили для разделов на странице */
+.sec_1, .sec_2, .sec_3 {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header h1 {
+    font-family: Algerian;
+    font-size: larger;
+    letter-spacing: 0.3cm;
+    border-bottom: solid 1pt red;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: var(--link-hover-color);
+    color: var(--link-hover-text-color);
+}
+
+/* Дополнительные стили */
+.nimekiri {
+    list-style-type: circle;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+}
+
+img#pilt1 {
+    width: 20%;
+}
+
+img#pilt2 {
+    width: 25%;
+    border: dotted 2pt red;
+}
+
+img#pilt3 {
+    width: 30%;
+    border: solid 1pt darkblue;
+    border-radius: 160px;
+}
+
+.sec_1 {
+    background-color: rgba(255, 99, 71, 0.5);
+    font-family: "Lucida Console";
+    text-shadow: 1px 1px #ff0000;
+    width: 50%;
+    border-radius: 10px;
+    border-bottom-color: deeppink;
+}
+
+.sec_2 {
+    background-color: darkgray;
+    border: inset 3pt black;
+    font-size: larger;
+    text-shadow: 3px 1px #ff0000;
+    border-right: red 20px;
+    width: 40%;
+    border-bottom-color: deeppink;
+    border-radius: 90px;
+}
+
+.sec_3 {
+    border: dashed 3pt yellow;
+    color: #202c2d;
+    text-shadow:
+        0 1px #808d93,
+        -1px 0 #cdd2d5,
+        -1px 2px #808d93,
+        -2px 1px #cdd2d5,
+        -2px 3px #808d93;
+    background-color: powderblue;
+    opacity: 60%;
+    width: 70%;
+    border-collapse: revert;
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    
+}
+
+.hamburger .line {
+    width: 24px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.hamburger:hover {
+    cursor: pointer;
+}
+
+#hamburger-1.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger-1.is-active .line:nth-child(1){
+    -webkit-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
+}
+
+ 
+#hamburger-1.is-active .line:nth-child(3){ 
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
+
+}
+

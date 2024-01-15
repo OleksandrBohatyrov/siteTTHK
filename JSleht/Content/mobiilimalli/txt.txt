@@ -1,0 +1,26 @@
+<table>
+            <tr>
+                <th><a href="joke.php?sort=content">Шутка</a></th>
+                <th style="width: 15%;"><a href="joke.php?sort=timestamp">Дата добавления</a></th>
+                <th>Действия</th>
+            </tr>
+
+            <?php foreach ($jokes as $joke) : ?>
+                <tr>
+
+                    <td><?= $joke->content ?></td>
+                    <td><?= $joke->timestamp ?></td>
+                    <td>
+                        <form action="joke.php" method="post">
+                            <input type="hidden" name="delete_id" value="<?= $joke->id ?>">
+                            <input type="submit" name="delete_joke" value="Удалить">
+                        </form>
+                        <form action="joke.php" method="post">
+                            <input type="hidden" name="muuda_id" value="<?= $joke->id ?>">
+                            <input type="text" name="muuda_content" placeholder="Изменить шутку">
+                            <input type="submit" name="muudajoke" value="Изменить">
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>

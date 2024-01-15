@@ -1,0 +1,333 @@
+table{
+    width: 100%;
+    border-spacing: 2px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px 0 ;
+}
+
+/* Стили для навигационного меню */
+nav {
+    background-color: #333;
+    text-align: center;
+
+}
+
+nav .phpul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav .phpli {
+    display: inline;
+    margin-right: 20px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+
+}
+
+/* Стили для основного содержимого */
+main {
+    padding: 20px;
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Дополнительные стили для разделов на странице */
+
+
+
+header h1{
+    font-family: Algerian;
+    font-size: larger;
+    letter-spacing: 0.3cm;
+    border-bottom: solid 1pt red; /*dotted dashed double*/
+}
+
+.phpul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.phpli {
+    float: left;
+
+}
+
+.phpli a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+li a:hover{
+    background-color: orange;
+    color: purple;
+    text-decoration: underline
+}
+
+input[type=text], select {width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button],input[type=reset]  {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[class=but],input[type=reset]  {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.option-input {
+    appearance: none;
+    top: 13px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    z-index: 1000;
+}
+.option-input:hover {
+    background: #9faab7;
+}
+.option-input:checked {
+    background: #40e0d0;
+}
+.option-input:checked::before {
+    width: 40px;
+    height: 40px;
+    display:flex;
+    content: '\f00c';
+    font-size: 25px;
+    font-weight:bold;
+    position: absolute;
+    align-items:center;
+    justify-content:center;
+    font-family:'Font Awesome 5 Free';
+}
+label{
+    display: flex;
+    line-height:40px;
+
+}
+.option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.option-input.radio {
+    border-radius: 50%;
+}
+.option-input.radio::after {
+    border-radius: 50%;
+}
+.radio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option-input.radio {
+    margin-right: 10px;
+}
+.label1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    outline: none;
+    text-align: center;
+    color: red;
+}
+.label1:hover {
+    font-variation-settings: "wght" 582;
+    letter-spacing: 3px;
+}
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 17rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #add8e6;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -4px; /* Centers thumb on the track */
+    background-color: #808080;
+    border-radius: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #808080;
+    outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #add8e6;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #808080;
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid #808080;
+    outline-offset: 0.125rem;
+}
+
+.ei {
+    position: absolute;
+    left: 800px;
+    top: 580px;
+}
+.jah {
+    position: absolute;
+    left: 1150px;
+    top: 580px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    cursor: pointer; /* Добавьте указатель мыши, чтобы пользователи могли кликнуть */
+}
+
+/* Стилизация флажков, когда они выбраны (checked) */
+input[type="checkbox"]:checked {
+    background-color: #009688; /* Пример: зеленый фон для выбранных флажков */
+    color: #fff; /* Белый текст для выбранных флажков */
+    border-color: #009688; /* Цвет рамки для выбранных флажков */
+}
+
+
+/* Стилизация флажков, когда они выбраны (checked) */
+input[type="radio"]:checked {
+    background-color: #009688; /* Пример: зеленый фон для выбранных флажков */
+    color: #fff; /* Белый текст для выбранных флажков */
+    border-color: #009688; /* Цвет рамки для выбранных флажков */
+}
+
+

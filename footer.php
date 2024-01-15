@@ -1,0 +1,1 @@
+<strong>&copy; O. Bohatyrov</strong>

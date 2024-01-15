@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oleksandr veebirakenduste leht</title>
+  <link rel="stylesheet" type="text/css" href="/AWD/style.css">
+  <link rel="stylesheet" type="text/css" href="/AWD/adaptive.css">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  header, main, footer {
+    margin: 20px 0;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    nav ul {
+      text-align: center;
+    }
+
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+
+  @media only screen and (min-width: 600px) and (max-width: 1200px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+  }
+
+
+</style>
+
+<script>
+  function hiireTegevus() {
+    $(".sec_3").mouseenter(red);
+    $("#pilt1").draggable();
+    $("#pilt1").bind("drag", liigutus);
+    $("#pilt2").draggable();
+    $("#pilt2").bind("drag", liigutus);
+    $("#pilt3").draggable();
+    $("#pilt3").bind("drag", liigutus);
+  }
+
+  $(document).ready(function () {
+    $("#nupp1").click(function () {
+      $(".sec_3").slideToggle();
+    });
+  });
+</script>
+
+<body onload="hiireTegevus()">
+<div class="container">
+  <div class="cont">
+    <!--päis-->
+    <header>
+      <h1>Responsive Web Design</h1>
+      <!--navigate menu-->
+      <nav>
+        <ul>
+          <li><a href="/index.html">Kodu</a></li>
+          <li><a href="/lingid.html">Kasulikud lingid</a></li>
+          <li><a href="/tood.html">Tööd</a></li>
+          <li><a href="https://github.com/OleksandrBohatyrov">GitHub</a></li>
+          <li><a href="https://oleksandrbohatyrov22.thkit.ee/wp/">WordPress</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--lehe sisu-->
+    <main>
+      <section class="sec_1">
+        <h2>Info</h2>
+        <p class="tthk">Ma õpin TTHKs, minu hobi on programmeerimine</p>
+      </section>
+      <section class="sec_2">
+        <h2>Pildid</h2>
+        <img src="/pild.png" alt="ilus pilt" id="pilt1">
+        <p><img src="/pild.png" alt="ilus pilt" id="pilt2"></p>
+        <p><img src="/pild.png" alt="ilus pilt" id="pilt3"></p>
+      </section>
+      <input type="button" id="nupp1" value="Slide">
+        <section class="sec_3" >
+          <h2 class="h2s">Programeerimine</h2>
+          <p>lisa suvalist IT teksti</p>
+          <p>Ülesanne 1. Kasuta erinevad HTML formaatid (10tk) ja katseta lisatud tekstiil</p>
+          <b>Esimese põlvkonna programmeerimiskeelteks nimetatakse masinkoodi keeli.</b>
+          <br>
+          <em> Masinkood koosneb käskudest, mida arvuti (protsessor) täita oskab<br>( ning nende käskude juurde kuuluvatest andmetest).</em>
+          <del>Masinkoodis <mark>pidi programmeerija</mark>  kirjutama oma programmi kahendkoodis, nii et see oleks protsessorile arvusaadav ja täidetav.</del>
+          <i>Sisuliselt nõuab selline programmeerimine häid teadmisi ja arusaamist riistvarast, <b>sest</b> programmeerimise käigus peab teadma mida protsessor teha oskab, kus asuvad sisend-väljundseadmed (I/O- Input-Output) ning kuidas nendega suhelda tuleb ja kui kaua aega mingi tegevuse tarvis kulub.</i>
+          <p>Niisiis on masinkood väga tugevasti seotud riistvaraga, mille peal vastav programm tööle hakkab <mark> Masinkood</mark> ei ole tänapäeva .</p>
+          <ins>Teise põlvkonna programmeerimiskeeled on assembler-keeled</ins>
+
+          <ul>
+            <li>C - <b>nimi tuleneb sellest,</b>  et keel baseerus paljuski B nimelisel programmeerimiskeelel, loodi operatsioonisüsteemide kirjutamiseks (paljud Unixi -laadsed operatsioonisüsteemid on enamikus kirjutatud C keeles), pikka aega üks populaarsemaid programmeerimiskeeli. </li>
+            <li>C++ - <sup> objektorienteeritud C.</sup></li>
+            <li>Java - C++ põhjal arendatud programmeerimiskeel </li>
+            <li>C# - <i>kõik kolmanda põlvkonna programmeerimiskeeled</i></li>
+          </ul>
+
+          <p>Ülesanne 2. Lisa 3 erinevat stiili erineva section elementidele</p>
+        </section>
+
+    </main>
+    <!--jalus-->
+    <footer>
+      <strong>&copy; O. Bohatyrov</strong>
+    </footer>
+  </div>
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+
+</html>

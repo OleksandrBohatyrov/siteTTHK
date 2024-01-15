@@ -1,3 +1,18 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "site"
+    "liveServer.settings.multiRootWorkspaceName": "site",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "oleksandrbohatyrov",
+            "database": "oleksandrbohatyrov",
+            "username": "oleksandrbohatyrov"
+        }
+    ]
 }
