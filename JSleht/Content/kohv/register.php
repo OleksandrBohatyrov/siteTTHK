@@ -1,6 +1,5 @@
 <?php
-// include our connect script
-require_once("conf.php");
+require_once("conf2.php");
 
 if (isset($_SESSION['username']) && isset($_SESSION['userid']))
     echo '<script>window.location.href = "haldusLeht.php";</script>';  // redirect the user to the home page
@@ -69,13 +68,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Registreerinud
     if (isset($success) && $success){
 
-        require ('haldusleht.php');
-        echo "<p>Logi sisse</p>";
+        echo '<script>window.location.href = "haldusleht.php";</script>';
+      
 
     }
     // Ei saanud registreerida
     else if (isset($error_msg)){
         echo '<div class=""><p style="color:red;">'.$error_msg.'</p></div>';
+        $yhendus->close();
+        exit();
         require ('haldusleht.php');
     }
 } else {
@@ -92,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" name="passwd" value="" placeholder="enter a password" autocomplete="off" required />
         </div>
         <div class="">
-            <p>password must be at least 5 characters and<br /> have a special character, e.g. !#$.,:;()</font></p>
+            <p>parool peab olema vähemalt 5 tähemärki ja<br /> on eriline märk, nagu !#$.,:;()</font></p>
         </div>
         <div class="">
             <input type="password" name="passwd_again" value="" placeholder="confirm your password" autocomplete="off" required />
