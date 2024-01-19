@@ -27,11 +27,11 @@ if (isset($_POST["muuda_id"])) {
     $newTopsepakis = $_POST["topsepakis"];
     $newTopsejuua = $_POST["topsejuua"];
 
-    // Обновление значений Topsepakis и Punktid
+    // Topsepakis ja Punktid väärtuste uuendamine
     updateTopsepakis($muudaId, $newTopsepakis);
     updatePunktid($muudaId, $newTopsejuua);
 
-    // Редирект для избежания повторной отправки формы при обновлении страницы
+    // Redaktsioon, et vältida vormi uuesti saatmist lehe uuendamisel
     header("Location: $_SERVER[PHP_SELF]");
     exit();
 }
@@ -40,10 +40,10 @@ if (isset($_REQUEST["kohv"])) {
     global $yhendus;
     $id = $_REQUEST["kohv"];
 
-    // Fetch the current value of topsejuua
+    // Tooge topsejuua praegune väärtus.
     $currentTopsejuua = getCurrentTopsejuua($id);
 
-    // Check if the subtraction would result in a negative value
+    // Kontrollida, kas lahutamise tulemuseks oleks negatiivne väärtus.
     if ($currentTopsejuua >= 0 && $currentTopsejuua <= 50) {
         updateTopsejuua($id, $currentTopsejuua + 1);
     } else {
@@ -83,10 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jooginimi"], $_POST["t
     $topsepakis = $_POST["topsepakis"];
     $topsejuua = $_POST["topsejuua"];
 
-    // Add a new drink
+    // Lisa uus jook
     lisaJook($jooginimi, $topsepakis, $topsejuua);
 
-    // Redirect to avoid form resubmission on page refresh
+    // Ümbersuunamine, et vältida vormi uuesti esitamist lehe uuendamisel
     header("Location: $_SERVER[PHP_SELF]");
     exit();
 }
@@ -176,7 +176,7 @@ require ('nav.php');
         ?>
     </table>
 
-    <!-- Форма для добавления нового напитка -->
+    <!-- Uue joogi lisamise vorm -->
     <form action="" method="post">
         <label for="jooginimi">Lisa uus jooginimi</label>
         <input type="text" name="jooginimi" id="jooginimi" style="width: 15%">
