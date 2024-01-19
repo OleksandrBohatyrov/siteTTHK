@@ -1,18 +1,24 @@
 <?php
+// Kontrolli, kas koodi kuvamine on päringuparameetri kaudu määratud
 if (isset($_GET['code'])) {
     die(highlight_file(__FILE__, 1));
 }
+
+// Lisame vajaliku konfiguratsioonifaili
 require_once('conf.php');
+
+// Alusta sessiooni
 session_start();
 
+// Kui on saadetud kohvi ostmise päring
 if (isset($_REQUEST["kohv"])) {
     global $yhendus;
     $id = $_REQUEST["kohv"];
 
-    // Fetch the current value of topsejuua
+    // Päri topsejuua praegune väärtus
     $currentTopsejuua = getCurrentTopsejuua($id);
 
-    // Check if the subtraction would result in a negative value
+    // Kontrolli, kas vähendamine viiks negatiivse väärtuseni
     if ($currentTopsejuua >= 0 && $currentTopsejuua <= 50) {
         $kask = $yhendus->prepare("UPDATE kohviautomaat SET topsejuua = topsejuua + 1 WHERE id=?");
         $kask->bind_param("i", $id);
@@ -24,7 +30,7 @@ if (isset($_REQUEST["kohv"])) {
     header("Location: $_SERVER[PHP_SELF]");
 }
 
-// Punktide vähendamine
+// Kui on saadetud punktide vähendamise päring
 if (isset($_REQUEST["kohv_"])) {
     global $yhendus;
     $id = $_REQUEST["kohv_"];
@@ -42,6 +48,7 @@ if (isset($_REQUEST["kohv_"])) {
     header("Location: $_SERVER[PHP_SELF]");
 }
 
+// Kui on saadetud päring raskpaki avamiseks
 if (isset($_REQUEST["raspak"])) {
     global $yhendus;
     $id = $_REQUEST["raspak"];
@@ -57,8 +64,9 @@ if (isset($_REQUEST["raspak"])) {
         $kask2->execute();
     }
     header("Location: $_SERVER[PHP_SELF]");
-
 }
+
+// Funktsioon topsejuua praeguse väärtuse pärimiseks
 function getCurrentTopsejuua($id)
 {
     global $yhendus;
@@ -72,9 +80,7 @@ function getCurrentTopsejuua($id)
     return $currentTopsejuua;
 }
 
-
-
-
+// Kui on saadetud päring tantsu kustutamiseks
 if(isset($_REQUEST["kustuta"])){
     global $yhendus;
     $kask = $yhendus->prepare("DELETE FROM tantsud WHERE id=?");
@@ -83,59 +89,61 @@ if(isset($_REQUEST["kustuta"])){
     header("Location: $_SERVER[PHP_SELF]");
 }
 
-
+// Funktsioon kontrollimaks, kas kasutaja on admin
 function isAdmin(){
     return isset($_SESSION['onAdmin']) && $_SESSION['onAdmin'] == 1;
 }
 ?>
 
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Tantsud tähtedega</title>
-        <script>
-            function closeModal() {
-                window.opener.location.reload();
-                window.close();
-            }
-            function avaModalLog() {
-                document.getElementById("modal_log").style.display = "flex";
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Tantsud tähtedega</title>
+    <script>
+        // JavaScript funktsioon modaalakna sulgemiseks ja avamiseks
+        function closeModal() {
+            window.opener.location.reload();
+            window.close();
+        }
+        function avaModalLog() {
+            document.getElementById("modal_log").style.display = "flex";
+        }
+
+        function avaModalReg() {
+            document.getElementById("modal_reg").style.display = "flex";
+        }
+
+        function suleModalLog() {
+            document.getElementById("modal_log").style.display = "none" ;
+        }
+
+        function suleModalReg() {
+            document.getElementById("modal_reg").style.display = "none";
+        }
+
+        // Käivitatakse klikil aknavälisel alal
+        window.onclick = function (event) {
+            var modalLog = document.getElementById("modal_log");
+            if (event.target == modalLog) {
+                suleModalLog();
             }
 
-            function avaModalReg() {
-                document.getElementById("modal_reg").style.display = "flex";
+            var modalReg = document.getElementById("modal_reg");
+            if (event.target == modalReg) {
+                suleModalReg();
             }
-
-            function suleModalLog() {
-                document.getElementById("modal_log").style.display = "none" ;
-            }
-
-            function suleModalReg() {
-                document.getElementById("modal_reg").style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                var modalLog = document.getElementById("modal_log");
-                if (event.target == modalLog) {
-                    suleModalLog();
-                }
-
-                var modalReg = document.getElementById("modal_reg");
-                if (event.target == modalReg) {
-                    suleModalReg();
-                }
-            }
-        </script>
-    </head>
-        <?php
-        require ('nav.php');
-        ?>
-    <body>
+        }
+    </script>
+</head>
+<?php
+// Lae navigatsioonifail
+require ('nav.php');
+?>
 
     <div id="modal_log">
             <div class="modal__window">
