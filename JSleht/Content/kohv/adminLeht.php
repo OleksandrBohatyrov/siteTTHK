@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('conf.php');
+require_once('conf2.php');
 
 function updateTopsepakis($id, $value)
 {
@@ -13,7 +13,7 @@ function updateTopsepakis($id, $value)
     $kask->close();
 }
 
-function updatePunktid($id, $value)
+function updateTopsejuua($id, $value)
 {
     global $yhendus;
     $kask = $yhendus->prepare("UPDATE kohviautomaat SET topsejuua = ? WHERE id = ?");
@@ -22,16 +22,28 @@ function updatePunktid($id, $value)
     $kask->close();
 }
 
+function muuda($id, $topsepakis, $topsejuua)
+{
+    echo "<td>";
+    echo "<form action='' method='post'>";
+    echo "<input type='hidden' name='muuda_id' value='$id'>";
+    echo "<input  style='width: 60%' type='number' name='topsepakis' value='$topsepakis'>";
+    echo "</td>";
+    echo "<td>" . $topsejuua . "</td>";
+    echo "<td><input style='width: 90%' type='submit' value='Salvesta'></td>";
+    echo "<td><input   style='width: 90%' type='submit' name='cancel' value='Cancel'></td>";
+    echo "</form>";
+    echo "</td>";
+}
+
 if (isset($_POST["muuda_id"])) {
     $muudaId = $_POST["muuda_id"];
     $newTopsepakis = $_POST["topsepakis"];
-    $newTopsejuua = $_POST["topsejuua"];
 
-    // Topsepakis ja Punktid väärtuste uuendamine
+    // Обновление значений Topsepakis и Punktid
     updateTopsepakis($muudaId, $newTopsepakis);
-    updatePunktid($muudaId, $newTopsejuua);
 
-    // Redaktsioon, et vältida vormi uuesti saatmist lehe uuendamisel
+    // Редирект для избежания повторной отправки формы при обновлении страницы
     header("Location: $_SERVER[PHP_SELF]");
     exit();
 }
@@ -40,10 +52,10 @@ if (isset($_REQUEST["kohv"])) {
     global $yhendus;
     $id = $_REQUEST["kohv"];
 
-    // Tooge topsejuua praegune väärtus.
+    // Fetch the current value of topsejuua
     $currentTopsejuua = getCurrentTopsejuua($id);
 
-    // Kontrollida, kas lahutamise tulemuseks oleks negatiivne väärtus.
+    // Check if the subtraction would result in a negative value
     if ($currentTopsejuua >= 0 && $currentTopsejuua <= 50) {
         updateTopsejuua($id, $currentTopsejuua + 1);
     } else {
@@ -83,15 +95,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["jooginimi"], $_POST["t
     $topsepakis = $_POST["topsepakis"];
     $topsejuua = $_POST["topsejuua"];
 
-    // Lisa uus jook
+    // Add a new drink
     lisaJook($jooginimi, $topsepakis, $topsejuua);
 
-    // Ümbersuunamine, et vältida vormi uuesti esitamist lehe uuendamisel
+    // Redirect to avoid form resubmission on page refresh
     header("Location: $_SERVER[PHP_SELF]");
     exit();
 }
 
+function getCurrentTopsejuua($id)
+{
+    global $yhendus;
+    $kask = $yhendus->prepare("SELECT topsejuua FROM kohviautomaat WHERE id = ?");
+    $kask->bind_param("i", $id);
+    $kask->execute();
+    $kask->bind_result($currentTopsejuua);
+    $kask->fetch();
+    $kask->close();
 
+    return $currentTopsejuua;
+}
 
 
 ?>
@@ -137,52 +160,57 @@ require ('nav.php');
         <tr>
             <th>Joohinimi</th>
             <th>Topsepakis</th>
-            <th>Punktid</th>
-            <th>Muuda</th>
-            <th>Kustuta</th>
+            <th>Kogus</th>
+            <?php   if (!isset($_REQUEST["muutmine"]))
+            { ?>
+                <th>Muuda</th>
+                <th>Kustuta</th>
+            <?php }?>
         </tr>
         <?php
         global $yhendus;
         $kask = $yhendus->prepare("SELECT id, joohinimi, topsepakis, topsejuua FROM kohviautomaat");
         $kask->bind_result($id, $joohinimi, $topsepakis, $topsejuua);
         $kask->execute();
-
+        $editingId = isset($_REQUEST["muutmine"]) ? $_REQUEST["muutmine"] : null;
         while ($kask->fetch()) {
             echo "<tr>";
             $joohinimi = htmlspecialchars($joohinimi);
             echo "<td>" . $joohinimi . "</td>";
-            echo "<td>" . $topsepakis . "</td>";
-            echo "<td>" . $topsejuua . "</td>";
-
-            if (!isset($_REQUEST["muutmine"]) || $id != intval($_REQUEST["muutmine"])) {
+            if (!isset($_REQUEST["muutmine"])) {
+                echo "<td>" . $topsepakis . "</td>";
+                echo "<td>" . $topsejuua . "</td>";
                 echo "<td><a href='?muutmine=$id'>Muuda</a></td>";
                 echo "<td><a href='?kustuta=$id'>Kustuta</a></td>";
-            } else {
-                echo "<td>";
-                echo "<form action='' method='post'>";
-                echo "<input type='hidden' name='muuda_id' value='$id'>";
-                echo "<input  style='width: 90%' type='number' name='topsepakis' value='$topsepakis'>";
-                echo "</td>";
-                echo "<td>";
-                echo "<input style='width: 90%' type='number' name='topsejuua' value='$topsejuua'>";
-                echo "</td>";
-                echo "<td><input style='width: 90%' type='submit' value='Salvesta'></td>";
-                echo "<td><input   style='width: 90%' type='submit' name='cancel' value='Cancel' onclick='history.back()'></td>";
-                echo "</form>";
-                echo "</td>";
             }
-            echo "</tr>";
-        }
+
+            else
+            {
+                if($editingId==$id)
+                {
+                    muuda($id, $topsepakis, $topsejuua);
+                }
+                else {
+                    echo "<td>" . $topsepakis . "</td>";
+                    echo "<td>" . $topsejuua . "</td>";
+                    echo "<td><a href='?muutmine=$id'>Muuda</a></td>";
+                    echo "<td><a href='?kustuta=$id'>Kustuta</a></td>";
+                }
+
+            }
+
+                echo "</tr>";
+            }
         ?>
     </table>
 
-    <!-- Uue joogi lisamise vorm -->
+    <!-- Форма для добавления нового напитка -->
     <form action="" method="post">
         <label for="jooginimi">Lisa uus jooginimi</label>
         <input type="text" name="jooginimi" id="jooginimi" style="width: 15%">
         <label for="topsepakis">Lisa topsepakis</label>
         <input type="number" name="topsepakis" id="topsepakis" style="width: 15%">
-        <label for="topsejuua">Lisa punktid</label>
+        <label for="topsejuua">Lisa topsejuua</label>
         <input type="number" name="topsejuua" id="topsejuua" style="width: 15%">
         <br>
         <input type="submit" value="Lisa jooginimi" style="width: 15%">
